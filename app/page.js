@@ -109,7 +109,7 @@ export default function Home() {
             {sent ? (
               <div className="text-center py-12">
                 <p className="text-2xl font-black text-secondary-container">Order sent! ✨</p>
-                <p className="text-primary mt-2">Falola will be in touch soon.</p>
+                <p className="text-primary mt-2">Ayomide will be in touch soon.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
