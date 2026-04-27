@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.squishy-btn {
+  transition: all 0.1s ease;
+  box-shadow: 0 4px 0 0 rgba(0,0,0,1), inset 0 2px 0 0 rgba(255,255,255,0.4);
+}
+.squishy-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 0 rgba(0,0,0,1), inset 0 2px 0 0 rgba(255,255,255,0.2);
+}

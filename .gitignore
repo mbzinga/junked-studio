@@ -1,0 +1,6 @@
+node_modules
+.next
+.env.local
+.DS_Store
+stitch_junked_studio_y2k_boutique/
+stitch_junked_studio_y2k_boutique.zip
