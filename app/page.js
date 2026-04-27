@@ -158,7 +158,7 @@ export default function Home() {
           @junkedstudio
         </a>
         <p className="text-pink-400 font-mono text-[10px] tracking-widest uppercase">made with love in the UK</p>
-        <p className="text-zinc-500 font-mono text-[10px] tracking-widest uppercase">© 2025 JUNKED STUDIO. PLUSH-INDUSTRIAL VIBES ONLY.</p>
+        <p className="text-zinc-500 font-mono text-[10px] tracking-widest uppercase">© 2026 JUNKED STUDIO. PLUSH-INDUSTRIAL VIBES ONLY.</p>
       </footer>
     </>
   )
