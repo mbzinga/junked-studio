@@ -17,7 +17,7 @@ export async function POST(req) {
 
   if (error) return Response.json({ error: error.message }, { status: 500 })
 
-  await resend.emails.send({
+  const { data: emailData, error: emailError } = await resend.emails.send({
     from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
     to: process.env.NOTIFY_EMAIL,
     subject: `New order from ${body.name}`,
@@ -28,7 +28,16 @@ export async function POST(req) {
       <p><b>Tier:</b> ${body.tier}</p>
       <p><b>Shipping:</b> ${body.shipping}</p>
       <p><b>Notes:</b> ${body.colors || 'None'}</p>`,
-  }).catch(() => {})
+  }).catch(err => {
+    console.error('[Resend] Failed to send email:', err)
+    return { data: null, error: err }
+  })
 
-  return Response.json({ ok: true })
+  if (emailError) {
+    console.error('[Resend] Email error:', emailError)
+  } else {
+    console.log('[Resend] Email sent successfully, id:', emailData?.id)
+  }
+
+  return Response.json({ ok: true, emailSent: !emailError })
 }
